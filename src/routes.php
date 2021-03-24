@@ -24,6 +24,12 @@ return function (App $app) {
         ->setName("orden")
         ->add($container->get('AuthMiddleware'));
 
+        $group->group('orders/', function (RouteCollectorProxy $group) use ($container) {
+
+        $group->get('all', 'OrderController:all')->setName("orden.all");
+        $group->get('add', 'OrderController:add')->setName("orden.add");
+
+        })->add($container->get('AuthMiddleware'));
 
     })->add($container->get("viewMiddleware"));
 

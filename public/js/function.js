@@ -1,6 +1,4 @@
-console.log("loro");
 $(function () {
-  console.log("data");
   let data = null;
   functions = {
     getDataTable: function (tr) {

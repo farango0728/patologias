@@ -18,6 +18,12 @@ return function (App $app) {
 
         return new \App\Controllers\HomeController($container);
 
-    });    
+    });  
+    
+    $container->set('OrderController', function () use ($container) {
+
+        return new \App\Controllers\OrderController($container);
+
+    }); 
 
 };
