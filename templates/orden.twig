@@ -4,49 +4,37 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
 {% endblock %}
 {% block content %}
-    <a name="contenido" class="oculto"></a>
-    <section id="information-slider">
-        {% for banner in banners %}
-            <img src="{{ banner.url_web }}" alt="{{ banner.description }}" height="350" width="100%">
-        {% endfor %}
-    </section>
     <section id="information-instance">
         <div class="rd-container">
             <div class="rd-element rd-s-100">
-                <h1 class="title-section">Red de instituciones</h1>
+                <h1 class="title-section">Ordenes</h1>
             </div>
         </div>
-        <div class="rd-container">
-            {% for inid in instanciasid %}
-                {% if (inid in auth.user.instancias) %}
-                    <div class="rd-element rd-s-50 rd-m-25 rd-l-25">
-                        <a tabindex="1" href="{{ url_for("toInstancia", { "name" : inid}) }}">
-                            <img src="{{ instancias[inid].imagen }}" alt="Acceso a {{ instancias[inid].name }}">
-                        </a>
-                    </div>
-                {% else %}
-                    <div class="rd-element t-center rd-s-50 rd-m-25 rd-l-25">
-                        <img src="{{ instancias[inid].imagenb }}" alt="Acceso a {{ instancias[inid].name }} inactivo">
-                    </div>
-                {% endif %}
+        <div class="ed-item s-100 flex">
+        <a href="{{ url_for('home') }}" class="btn btn-info"> <i class="fa fa-angle-left"></i> Volver</a>
+            <button class="btn btn-primary addcourse" data-href="{{ url_for('orden.add') }}">Agregar Orden <i class="fa fa-plus"></i></button>
+    </div>
 
-            {% endfor %}
-        </div>
+
 
     </section>
 
 <div class="ed-container full">
-    <div class="ed-item s-100 l-20 margin-2-em-vertical">
-        <h2 class="text-black text-bold">{{ module_name | title }}</h2>
-    </div>
     <div class="separator"></div>
     <div class="ed-item s-100">
     <br>
         <table id="tb_courses" class="display">
             <thead>
                 <tr>
-                    <th>ID:</th>
-                    <th> {{ "código" | title }}</th>
+                    <th> Id Order</th>
+                    <th> Id Patient</th>
+                    <th> Name Patient</th>
+                    <th> Id Eps</th>
+                    <th> Name Eps</th>
+                    <th> Number Authorization</th>
+                    <th> Id Modality</th>
+                    <th> Name Modality</th>
+                    <th> Active</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,52 +43,5 @@
     </div>
 </div>
 {% endblock %}
-{% block scripts %}
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js"></script>
-var _td = null;
-var table = $('table').DataTable({
-        lengthMenu: [ 25, 50, 75, 100 ],
-        language: {
-            "sProcessing":     "Procesando...",
-            "sLengthMenu":     "Registros por pagina: _MENU_ ",
-            "sZeroRecords":    "No se encontraron resultados",
-            "sEmptyTable":     "Ningún dato disponible en esta tabla",
-            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-            "sInfoPostFix":    "",
-            "sSearch":         "Buscar:",
-            "sUrl":            "",
-            "sInfoThousands":  ",",
-            "sLoadingRecords": "Cargando...",
-            "paginate": {
-                "first":      "Primera",
-                "last":       "Ultima",
-                "next":       "Siguiente <i class='fa fa-angle-right'></i>",
-                "previous":   "<i class='fa fa-angle-left'></i> Anterior"
-            },
-            "oAria": {
-                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            }
-        },
-        ajax: {
-            url: getUri + '/panel/courses/all',
-            dataSrc: ''
-        },
-        dom: 'Blfrtip',
-        buttons : [{
-            extend: 'excel',
-            title: 'Cursos',
-            text: 'Exportar información en excel <i class="fa fa-file-excel-o"></i>',
-            className: 'btn btn-info'
-        }],
-        columns: [
-            { data: 'id' },
-            { data: 'codigo' }
-          ]
-    });
-</script>
-<script src="{{ base_url }}/js/function.js"></script>
-<script src="{{ base_url }}/public/js/modules/course.js"></script>
+{% block modales %}
 {% endblock %}
