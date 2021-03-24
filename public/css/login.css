@@ -1,0 +1,147 @@
+@import "variables.css";
+
+body{
+    background-image: url("../images/loginbg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Roboto;
+    font-size: 11pt;
+    flex-direction: column;
+    color: var(--primary-gray-light);
+}
+
+.oculto {
+    visibility: hidden;
+    height: 0;
+}
+
+.login-box {
+     background-color: #f2f2f2;
+     border-radius: 10px;;
+     overflow: hidden;
+     min-width: 35%;
+     max-width: 50%;
+ }
+
+.login-box-2 {
+    background-color: #f2f2f2;
+    border-radius: 10px;;
+    overflow: hidden;
+    min-width: 35%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 10%;
+}
+.login-box-2 img{
+    height: 50px;
+    margin-right: 15px;
+}
+
+.encabezado {
+    color: white;
+    background: rgb(59, 59, 59);
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: xxx-large;
+}
+
+.encabezado img {
+    max-width: 300px;
+}
+.contenido {
+    display: flex;
+}
+
+.notificacion {
+    width: 120%;
+    background: blue;
+    /*display: none;*/
+}
+
+.notificacion img {
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+    height: 100%;
+}
+
+.formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formulario > div {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto 0 0 0;
+}
+
+.formulario p {
+    text-align: center;
+    font-size: 10pt;
+    color: var(--primary-gray-light);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    padding: 10px;
+    margin: 15px 25px;
+}
+
+input {
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+    background: #E6E6E6;
+    font-style: italic;
+    border-color: darkgray;
+
+}
+
+.mensaje_validacion{
+    color: red;
+    font-size: 11px;
+    text-align: center;
+    display: none;
+}
+
+button {
+    background: var(--primary-yellow);
+    border-style: none;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 13pt;
+    cursor: pointer;
+}
+
+
+.accesibilidad {
+    background:  #4a4a49;
+}
+
+a{
+    color: #007df6;
+}
+
+
+@media (max-width: 700px) {
+    .login-box, .login-box-2{
+        max-width: 90%;
+    }
+}

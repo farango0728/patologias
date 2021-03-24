@@ -1,0 +1,8 @@
+{% for msg in errors %}
+    <span class="errors">{{ msg }}</span>
+{% endfor %}
+{{ clear('errors') }}
+{% for msg in success %}
+    <span class="success">{{ msg }}</span>
+{% endfor %}
+{{ clear('success') }}

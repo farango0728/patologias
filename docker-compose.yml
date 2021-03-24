@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+    some-service:
+        env_file: .env
+     web:
+       image: nginx:alpine
+       ports:
+           - "8081:80"
+       volumes:
+           - ./:/
+           - ./conf.d:/etc/nginx/conf.d
+           - /etc/localtime:/etc/localtime
+       networks:
+           - nginxphp
+
+     php:
+       image: php:7.4.3-fpm-alpine
+       volumes:
+           - ./:/
+       expose:
+           - 9000
+       networks:
+           - nginxphp
+
+networks:
+     nginxphp:

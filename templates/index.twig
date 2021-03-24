@@ -1,0 +1,38 @@
+{% extends "template/base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/home.css">
+    
+{% endblock %}
+{% block content %}
+    <a name="contenido" class="oculto"></a>
+    <section id="information-slider">
+        {% for banner in banners %}
+            <img src="{{ banner.url_web }}" alt="{{ banner.description }}" height="350" width="100%">
+        {% endfor %}
+    </section>
+    <section id="information-instance">
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <h1 class="title-section">Red de instituciones</h1>
+            </div>
+        </div>
+        <div class="rd-container">
+            {% for inid in instanciasid %}
+                {% if (inid in auth.user.instancias) %}
+                    <div class="rd-element rd-s-50 rd-m-25 rd-l-25">
+                        <a tabindex="1" href="{{ url_for("toInstancia", { "name" : inid}) }}">
+                            <img src="{{ instancias[inid].imagen }}" alt="Acceso a {{ instancias[inid].name }}">
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="rd-element t-center rd-s-50 rd-m-25 rd-l-25">
+                        <img src="{{ instancias[inid].imagenb }}" alt="Acceso a {{ instancias[inid].name }} inactivo">
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="{{ base_path }}/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Imexh - Bogota Colombia">
+    <meta name="author" content="imexh-Bogota">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/login.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/jbility.min.css">
+    <title>LOGIN Enterprise - Imexh</title>
+
+</head>
+<body style="background-image: url('{{ base_path }}/images/{{ getBgRandom() }}'); background-color: #192138">
+<div class="login-box">
+    <div class="encabezado"><img src="{{ base_path }}/images/plataforma_digital.png"></div>
+    <div class="contenido">
+        {% if imagen_info %}
+        <div class="notificacion">
+            <img src="{{ imagen_info.url_web }}" alt="{{ imagen_info.description }}">
+        </div>
+        {% endif %}
+        <div class="formulario">
+            <h1 class="oculto">Ingreso al sistema</h1>
+            <div>
+                <form id="form" class="flex rd-element-col" method="post" action="{{ url_for("login") }}">
+                    <label class="oculto">Nombre de usuario</label>
+                    <input name="username" type="text" placeholder="Nombre de usuario">
+                    <label class="oculto">Contraseña</label>
+                    <input name="password" type="password" placeholder="Contraseña">
+                    <input type="hidden" name="{{csrf.keys.name}}" value="{{csrf.name}}">
+                    <input type="hidden" name="{{csrf.keys.value}}" value="{{csrf.value}}">
+                    <p class="mensaje_validacion">Usario o contraseña invalidos</p>
+                    {% include 'alertas/alertas.twig' %}
+                    <button>Acceder</button>
+                </form>
+                <p>¿Olvidaste tu contraseña? Haz clic <a href="#">aquí</a></p>
+            </div>
+            <div class="accesibilidad"></div>
+        </div>
+    </div>
+</div>
+
+<div class="login-box-2">
+    <img src="images/tools.png">
+    <p>Si tienes dificultad para acceder a la plataforma Digital, ingresa por favor al Centro de soporte. Haz clic <a href="#" target="_blank">aquí</a></p>
+</div>
+{% include 'accessibility/accessibility.twig' %}
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="{{ base_path }}/js/jbility.min.js"></script>
+<script src="{{ base_path }}/js/jquery-ui.js"></script>
+</body>
+</html>

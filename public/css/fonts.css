@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: var(--primary-font-size);
+}
+
+/*@font-face {
+    font-family: 'Roboto';
+    src: url('../font/arrobaicons.eot?30827578');
+    src: url('../font/arrobaicons.eot?30827578#iefix') format('embedded-opentype'),
+    url('../font/arrobaicons.woff2?30827578') format('woff2'),
+    url('../font/arrobaicons.woff?30827578') format('woff'),
+    url('../font/arrobaicons.ttf?30827578') format('truetype'),
+    url('../font/arrobaicons.svg?30827578#arrobaicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+    font-weight: 200;
+}

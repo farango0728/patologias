@@ -1,0 +1,38 @@
+{
+    "require": {
+        "slim/slim": "4.*",
+        "vlucas/phpdotenv": "^4.1",
+        "illuminate/database": "^7.5",
+        "slim/twig-view": "^3.0",
+        "slim/csrf": "^1.0",
+        "slim/psr7": "^1.0",
+        "php-di/php-di": "^6.0",
+        "monolog/monolog": "^2.0",
+        "slim/http": "^1.0",
+        "symfony/http-client": "^5.0",
+        "illuminate/support": "^7.5",
+        "gumlet/php-image-resize": "^1.9",
+        "ext-json": "*",
+        "ext-exif": "*",
+		"twbs/bootstrap": "4.5.0",
+        "guzzlehttp/guzzle": "^6.5",
+        "ext-SimpleXML": "^7.4",
+        "symfony/mailer": "^5.1",
+        "symfony/google-mailer": "^5.1",
+        "symfony/twig-bundle": "^5.1",
+        "ext-openssl": "*"
+    },
+    "autoload" : {
+        "files": [
+            "src/utilities/helpers.php"
+        ],
+        "psr-4" : {
+            "App\\" : "src"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env-example', '.env');\""
+        ]
+    }
+}

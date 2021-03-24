@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="{{ base_path }}/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/login.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/jbility.min.css">
+    <title>Bienvenido al campus virtual</title>
+    <style>
+        .encabezado {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .login-box-2 {
+            max-width: 100%;
+            height: auto;
+        }
+        .bg-content {
+            background-color: #ffffff;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+        input {
+            margin: 2em 0;
+        }
+        button {
+            padding: .5em 1em;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .accesibilidad {
+            padding: 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+    {% block style %}{% endblock %}
+</head>
+<body style="background-image: url('{{ base_path }}/images/{{ getBgRandom() }}'); background-color: #192138">
+<div class="rd-container">
+    <div class="rd-element rd-s-100 rd-l-70 center encabezado">
+        <img src="{{ base_path }}/images/logo_header.png" alt="Logo Imxh">
+    </div>
+    <div class="rd-element rd-s-100 rd-l-70 center bg-content t-center">
+        {% include 'alertas/alertas.twig' %}
+        {% block content %}{% endblock %}
+    </div>
+    <div class="rd-element rd-s-100 rd-l-70 center accesibilidad"></div>
+</div>
+
+<div class="rd-container">
+    <div class="rd-element rd-s-100 rd-l-70 center login-box-2">
+        <img src="{{ base_path }}/images/tools.png" >
+        <p>Si tienes dificultad para acceder a la plataforma Digital, ingresa por favor al Centro de soporte. Haz clic
+            <a href="#" target="_blank">aquí</a></p>
+    </div>
+</div>
+{% include 'accessibility/accessibility.twig' %}
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="{{ base_path }}/js/jbility.min.js"></script>
+<script src="{{ base_path }}/js/jquery-ui.js"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

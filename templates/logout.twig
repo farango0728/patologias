@@ -1,0 +1,17 @@
+{% extends "contrasena/base.twig" %}
+{% block content %}
+    <div class="rd-element-col">
+        <div class="rd-element rd-s-100 rd-l-70 center">
+            <h1 tabindex="1" class="t-center">Gracias por estar en nuestr portal digital imexhs</h1>
+            <p class="t-center">
+                Te esperamos pronto!!
+            </p>
+        </div>
+    </div>
+    {% for key in instanciasid | keys %}
+        {% if (key in instancias) %}
+            <iframe style="visibility: hidden;background-color: white;position: absolute;left: -200px;width: 0px" src="{{ instanciasid[key].domain }}/auth/userkey/logout.php?return=www.google.com" frameborder="0"></iframe>
+        {% else %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

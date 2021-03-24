@@ -1,0 +1,116 @@
+@media (max-width: 700px) {
+    .login-box, .login-box-2{
+        max-width: 90%;
+    }
+
+
+    header .rd-element.rd-s-100.rd-l-50.t-left {
+        text-align: center;
+    }
+
+    header .rd-element.rd-s-100.rd-l-50.t-right.rd-element-align-center.flex.rd-element-justify-flex-end {
+        justify-content: center;
+    }
+
+    .menu p {
+        font-size: 20px;
+    }
+
+    .menu-box {
+        top: 137px;
+    }
+    .acess-container {
+        bottom: 54% !important;
+    }
+
+    body {
+        margin-top: 136px;
+    }
+
+    #information-instance {
+        margin: 4em 0 !important;
+    }
+
+    #information-instance .rd-element.t-center.rd-s-50.rd-m-25.rd-l-25 {
+        padding: 0em 0.2em;
+    }
+
+    #tab-cursos_home, #tab-portafolio_home {
+        font-size: 1.2rem;
+        margin-right: 1rem !important;
+    }
+
+    #cursos_home .rd-element.rd-s-50.rd-l-25 {
+        padding: 0px 5px;
+    }
+
+    .curse-container {
+        margin-bottom: 0.5em !important;
+    }
+
+    .curse-container.virtual .button-container span {
+        background-color: var(--primary-purple-dark);
+        color: white;
+    }
+
+    footer .rd-container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    footer h4 {
+        font-size: 1.3em;
+        margin-bottom: 0.6em;
+        margin-top: 1.5em;
+    }
+
+    footer .logos {
+        margin-top: 1em;
+    }
+
+    footer .rd-element.rd-s-100.rd-l-60.logos img {
+        width: 33%;
+    }
+
+    .title-section {
+        font-size: 1.8em;
+    }
+
+    /*portafolio home*/
+    .big-text-rejilla {
+        font-size: 1.7em !important;
+    }
+    .container-perfil {
+        margin-top: 0.5em !important;
+    }
+
+    .container-big-text {
+        margin-bottom: 1em !important;
+    }
+
+
+    .card-container .legend-container .legend {
+        margin-left: 0em !important;
+        font-size: 0.6em !important;
+        letter-spacing: 0.5px !important;
+    }
+    #global-card-container .rd-element.rd-s-50.rd-l-25 {
+        padding: 0.3rem !important;
+    }
+    .card-container {
+        margin-bottom: 0.1em !important;
+    }
+
+    /*Perfil*/
+      .editar {
+          margin-top: 3em;
+      }
+
+    .editar .rd-element {
+        padding: 0;
+    }
+
+    .editar td {
+        display: inherit;
+    }
+}
