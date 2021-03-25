@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/template.css">
     <meta name="description" content="Imexhs - Bogota Colombia">
     <meta name="author" content="Imexhs - Bogota Colombia">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ base_path }}/fonts/SimpleIcons/css/simple-line-icons.css">
     <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/jbility.min.css">
@@ -26,15 +27,13 @@
                 <img src="{{ base_path }}/images/plataforma_digital.png" alt="Logo de imxh" class="logo">
             </a>
         </div>
+        {% include "template/nav.twig" %}
         <ul class="oculto"><li><a href="#contenido">Ir al contenido princpal</a></li></ul>
         <div class="rd-element rd-s-100 rd-l-50 t-right rd-element-align-center flex rd-element-justify-flex-end">
             <div tabindex="1"  class="menu" onclick="hideShow()">
                 <p>{{ auth.user.nombres }} {{ auth.user.apellidos }}</p>
                 <img class="avatar" src="{{ base_path }}/images/f1.jpg" alt="" width="200">
                 <i class="icon-arrow-down"/></i>
-                {% if (total>0) %}
-                    <div class="mensajes">{{ total }}</div>
-                {% endif %}
             </div>
         </div>
     </div>
@@ -87,6 +86,9 @@
 <script src="{{ base_path }}/js/jquery-ui.js"></script>
 <script src="{{ base_path }}/js/template.js"></script>
 <script src="{{ base_url }}/js/modules/orden.js"></script>
+<script src="{{ base_url }}/js/modules/user.js"></script>
+<script src="{{ base_url }}/js/modules/eps.js"></script>
+<script src="{{ base_url }}/js/modules/modality.js"></script>
  <script>
 
         $.ajaxSetup({
