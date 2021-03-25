@@ -52,6 +52,7 @@ button {border: none;}
 .btn-info {
     background-color: var(--primary-blue);
     color: #ffffff;
+    margin-bottom: 1em;
 }
 .btn.full {
     width: 100%;

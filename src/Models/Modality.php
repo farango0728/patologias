@@ -8,7 +8,7 @@ namespace App\Models;
 class Modality extends Model
 {
     protected $table = "modality";
-    protected $fillable = ['id', 'name', 'active'];
+    protected $fillable = ['id', 'abbreviation',  'name', 'active'];
     protected $primaryKey = 'id';
     
 }

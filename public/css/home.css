@@ -1,7 +1,10 @@
 #information-instance {
-    margin: 6em 0;
+    margin-top: 6em;
+    margin-bottom: 1em;
 }
-
+#information-instance1 {
+    margin: 1em 0;
+}
 #form-filter {
     margin-bottom: 3em;
 }

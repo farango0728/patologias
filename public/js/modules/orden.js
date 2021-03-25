@@ -43,7 +43,9 @@ $(document).ready(function () {
       },
     ],
     columns: [
-      { data: "idOrder" },
+      {
+        data: "idOrder",
+      },
       { data: "idPatient" },
       { data: "patients" },
       { data: "idEps" },
@@ -52,6 +54,12 @@ $(document).ready(function () {
       { data: "idModality" },
       { data: "modality" },
       { data: "active" },
+      {
+        data: "idOrder",
+        render: function (data, type, row, meta) {
+          return '<a title="Realizar Estudio" class="archiveRegister icon_a" href="#" target="_black"><i class="fa fa-folder"></i></a>&nbsp;<a title="Eliminar orden" class="archiveRegister icon_a" href="#" target="_black"><i class="fa fa-trash text-danger"></i></a>&nbsp;<a title="Editar orden" class="archiveRegister icon_a" href="#" target="_black"><i class="fa fa-pencil text-sucess"></i</a>';
+        },
+      },
     ],
   });
 });

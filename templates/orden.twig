@@ -10,38 +10,44 @@
                 <h1 class="title-section">Ordenes</h1>
             </div>
         </div>
-        <div class="ed-item s-100 flex">
-        <a href="{{ url_for('home') }}" class="btn btn-info"> <i class="fa fa-angle-left"></i> Volver</a>
-            <button class="btn btn-primary addcourse" data-href="{{ url_for('orden.add') }}">Agregar Orden <i class="fa fa-plus"></i></button>
-    </div>
-
-
-
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <div class="ed-item s-100 flex">
+                    <button class="btn btn-info addcourse" data-href="{{ url_for('orden.add') }}">Agregar Orden <i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
     </section>
-
-<div class="ed-container full">
-    <div class="separator"></div>
-    <div class="ed-item s-100">
-    <br>
-        <table id="tb_courses" class="display">
-            <thead>
-                <tr>
-                    <th> Id Order</th>
-                    <th> Id Patient</th>
-                    <th> Name Patient</th>
-                    <th> Id Eps</th>
-                    <th> Name Eps</th>
-                    <th> Number Authorization</th>
-                    <th> Id Modality</th>
-                    <th> Name Modality</th>
-                    <th> Active</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+<section id="information-instance1">
+<div class="rd-container">
+    <div class="rd-element rd-s-100">
+        <div class="ed-container full">
+            <div class="separator"></div>
+            <div class="ed-item s-100">
+            <br>
+                <table id="tb_courses" class="display">
+                    <thead>
+                        <tr>
+                            <th> Id Orden</th>
+                            <th> Id Paciente</th>
+                            <th> Nombre Paciente</th>
+                            <th> Id Eps</th>
+                            <th> Nombre Eps</th>
+                            <th> Numero Autorizacion</th>
+                            <th> Id Modalida</th>
+                            <th> Nombre Modalida</th>
+                            <th> Estado</th>
+                            <th> Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
+</section>
 {% endblock %}
 {% block modales %}
 {% endblock %}

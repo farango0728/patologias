@@ -26,4 +26,22 @@ return function (App $app) {
 
     }); 
 
+    $container->set('UserController', function () use ($container) {
+
+        return new \App\Controllers\UserController($container);
+
+    }); 
+
+    $container->set('EpsController', function () use ($container) {
+
+        return new \App\Controllers\EpsController($container);
+
+    });
+
+    $container->set('ModalityController', function () use ($container) {
+
+        return new \App\Controllers\ModalityController($container);
+
+    });
+
 };
