@@ -32,15 +32,16 @@ return function (App $app) {
 
     }); 
 
-    $container->set('EpsController', function () use ($container) {
+   
+    $container->set('LogicController', function () use ($container) {
 
-        return new \App\Controllers\EpsController($container);
+        return new \App\Controllers\LogicController($container);
 
     });
 
-    $container->set('ModalityController', function () use ($container) {
+    $container->set('StudyController', function () use ($container) {
 
-        return new \App\Controllers\ModalityController($container);
+        return new \App\Controllers\StudyController($container);
 
     });
 

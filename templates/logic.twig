@@ -1,0 +1,43 @@
+{% extends "template/base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/home.css">   
+{% endblock %}
+{% block content %}
+    <a name="contenido" class="oculto"></a>
+    <section id="information-instance">
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <h1 class="title-section">Logica Resultados</h1>
+            </div>
+        </div>
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+            2. Given an array A with n as length. Find the maximum contiguous subarray, that
+            means, the contiguous subarray which has the largest sum of values and returns its
+            sum.
+                     <div class="rd-element rd-s-100"><h2>array [ {% for key,value in data %}
+                        {{ value }},
+                    {% endfor %}]</h2></div>
+                        <div class="rd-element rd-s-100">
+                            <h2>array [ {% for key,value in arraySum %}
+                                {{ value }},
+                                {% endfor %}]
+                            </h2>
+                        </div>
+
+                <div class="title-section"><center> Resultado  : {{ result }}</center></div>
+
+                <div>$data = array(-2, 1, -3, 4, -1 , 2 , 1 , -5 , 4)</div>       
+                <div>$posicion = array_search(4, $data)</div>
+                <div>$finPosicion = $posicion + 4</div>
+                <div>$acumulado = 0</div>
+                <div>$arrayResul = []</div>
+                <div>while($posicion < $finPosicion){</div>
+                    <div>$acumulado += $data[$posicion]</div>
+                    <div>array_push($arrayResul , $data[$posicion])</div>
+                    <div>$posicion++</div>
+                } </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "template/base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/home.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+{% endblock %}
+{% block content %}
+    <section id="information-instance">
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <h1 class="title-section">Usuarios Plataforma</h1>
+            </div>
+        </div>
+    </section>
+<section id="information-instance1">
+<div class="rd-container">
+    <div class="rd-element rd-s-100">
+        <div class="ed-container full">
+            <div class="separator"></div>
+            <div class="ed-item s-100">
+            <br>
+                <table id="tb_user" class="display">
+                    <thead>
+                        <tr>
+                            <th> Id User</th>
+                            <th> Nombre</th>
+                            <th> Apellido</th>
+                            <th> Email</th>
+                            <th> phone</th>
+                            <th> Estado</th>
+                            <th> Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}
+{% block modales %}
+{% endblock %}

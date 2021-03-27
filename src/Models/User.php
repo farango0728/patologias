@@ -7,13 +7,13 @@ namespace App\Models;
 
 class User extends Model
 {
-    protected $table = "users";
-    protected $fillable = ['id', 'name', 'lastName', 'email', 'userName', 'password', 'phone', 'active'];
+    protected $table = "usuarios";
+    protected $fillable = ['id', 'nombre', 'apellido', 'email', 'usuario', 'password', 'telefono', 'active'];
     protected $primaryKey = 'id';
 
     public function data()
     {
-        return User::select(['id', 'name', 'lastName', 'email', 'userName', 'active', 'phone'])->get();
+        return User::select(['id', 'nombre', 'apellido', 'email', 'usuario', 'active', 'telefono'])->get();
     }
     
 }

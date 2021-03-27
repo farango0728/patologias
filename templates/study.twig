@@ -1,0 +1,44 @@
+{% extends "template/base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/home.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+{% endblock %}
+{% block content %}
+    <section id="information-instance">
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <h1 class="title-section">Usuarios Plataforma</h1>
+            </div>
+        </div>
+    </section>
+<section id="information-instance1">
+<div class="rd-container">
+    <div class="rd-element rd-s-100">
+        <div class="ed-container full">
+            <div class="separator"></div>
+            <div class="ed-item s-100">
+            <br>
+                <table id="tb_study" class="display">
+                    <thead>
+                        <tr>
+                            <th> Id Paciente</th>
+                            <th> Nombre Paciente</th>
+                            <th> Fecha Nacimiento</th>
+                            <th> Modalidad</th>
+                            <th> nombre</th>
+                            <th> id Imagen</th>
+                            <th> Id Orden</th>
+                            <th> Id Eps</th>
+                            <th> Autorizacion</th>
+                            <th> Estudio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

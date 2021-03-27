@@ -1,0 +1,70 @@
+{% extends "template/base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/home.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/grid.css">     
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/formulario.css"> 
+{% endblock %}
+{% block content %}
+    <a name="contenido" class="oculto"></a>
+    <section id="information-instance">
+        <div class="rd-container">
+            <div class="rd-element rd-s-100">
+                <h1 class="title-section">Información de Estudio</h1>
+            </div>
+        </div>
+    </section>
+<section >
+    <div class="rd-container">
+        <div class="rd-element rd-s-100">
+            <div class="container-label">
+                <div><label for="nombre"><h1>Nombre</h1> {{nombre}}</label></div>
+                <div><label for="autorizacion"><h1>Autorizacion</h1> {{autorizacion}}</label></div>
+                <div><label for="edad"><h1>edad </h1>{{edad}} Años</label></div>
+                <div><label for="orden"><h1>orden </h1>{{orden}}</label></div>
+            </div>
+            <div class="container">
+                <div class="login-box">
+                    <div class="contenido">
+                        <div class="formulario">
+                            <form id="form" class="flex rd-element-col" method="post" action="{{ url_for("study.add") }}">
+                            <input name="orden" type="hidden" value="{{orden}}"/>
+                                {% for pregunta in preguntas %}
+                                <div class="preguntas">
+                                <div><h2><label for="descripcion_pregunta"> {{pregunta.descripcion}}</label></h2></div>
+                                <div>
+                                    {% if pregunta.tipo == 1  %}
+                                            <input name="respuestaPregunta[{{pregunta.id_pregunta}}]" id="P{{pregunta.id_pregunta}}" type="text" minlength="1"  maxlength="10" pattern="[0-9]*" class="form-control" required >
+                                    {% endif %}
+                                    {% if pregunta.tipo == 2  %}
+                                        <div class="preguntas_multiples">
+                                            {% for multiple in multiples %}
+                                                {% if pregunta.id_pregunta == multiple.id_pregunta  %}
+                                                        <div> {{multiple.descripcion}}</label></div>
+                                                        <div><input type="checkbox" id="vehicle{{multiple.id_opcion}}" name="opcion[{{multiple.id_pregunta}}]" value={{multiple.id_opcion}}></div>
+                                                
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    {% if pregunta.tipo == 3  %}
+                                            <textarea name="{{pregunta.id_pregunta}}" rows="5" cols="50" id="P{{pregunta.id_pregunta}}"></textarea>
+                                    {% endif %}
+                                    
+                                    </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="preguntas">
+                                    <div><h2><label for="descripcion_pregunta"> Procentaje Agua</label></h2></div>
+                                    <input id="porcentaje" type="text" class="form-control" >
+                                </div>
+                                
+                                <button>Crear Estudio</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
