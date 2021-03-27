@@ -1,0 +1,16 @@
+{% block style %}
+    <link rel="stylesheet" href="{{ base_path }}/css/nav.css">   
+{% endblock %}
+{% block content %}
+    <div class="rd-element">
+        <nav>
+        <ul class="nav ">
+            <li class="item"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="item"><a href="{{ url_for('user') }}">Usuarios</a></li>
+            <li class="item"><a href="{{ url_for('study') }}">Estudio</a></li>
+            <li class="item"><a href="{{ url_for('array1') }}">Logica</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+        </nav>
+    </div>
+{% endblock %}

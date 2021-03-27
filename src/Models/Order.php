@@ -7,44 +7,33 @@ namespace App\Models;
 
 class Order extends Model
 {
-    protected $table = "orders";
-    protected $fillable = ['idPatient', 'idOrder', 'idEps', 'numberAuthorization', 'idModality'];
+    protected $table = "orden";
+    protected $fillable = ['id_orden', 'id_eps', 'autorizacion', 'active'];
 
-    protected $appends = ['patients', 'eps', 'modality'];
+    protected $appends = ['paciente', 'estudio'];
 
-    public function patients()
+    public function paciente()
     {
-        return $this->hasMany(Patients::class, 'id', 'idPatient');
+        return $this->hasMany(Paciente::class, 'id_orden', 'id_orden');
     }
 
-    public function getPatientsAttribute()
+    public function getPacienteAttribute()
     {   
-        $patients = $this->patients()->select('name', 'lastName')->get();
+        $patients = $this->paciente()->get();
 
-        return $patients[0]['name'].' '.$patients[0]['lastName'];
+        return $patients;
     }
 
-    public function eps()
+     public function estudio()
     {
-        return $this->hasMany(Eps::class, 'id', 'idEps');
+        return $this->hasMany(Estudio::class, 'id_orden', 'id_orden');
     }
 
-    public function getEpsAttribute()
+    public function getEstudioAttribute()
     {   
-        $eps = $this->eps()->select('name')->get();
+        $estudio = $this->estudio()->get();
 
-        return $eps[0]['name'];
-    }
+        return $estudio;
+    } 
 
-    public function modality()
-    {
-        return $this->hasMany(Modality::class, 'id', 'idEps');
-    }
-
-    public function getModalityAttribute()
-    {   
-        $modality = $this->modality()->select('name')->get();
-
-        return $modality[0]['name'];
-    }
 }

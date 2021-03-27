@@ -28,18 +28,20 @@ return function (App $app) {
             $group->get('user', 'UserController:user')
                 ->setName("user")
                 ->add($container->get('AuthMiddleware'));
-            $group->get('eps', 'EpsController:eps')
-                ->setName("eps")
-                ->add($container->get('AuthMiddleware'));
-            
-            $group->get('modality', 'ModalityController:modality')
-                ->setName("modality")
-                ->add($container->get('AuthMiddleware'));
+
+            $group->get('study', 'StudyController:study')
+            ->setName("study")
+            ->add($container->get('AuthMiddleware'));
+          
+            $group->get('array1', 'LogicController:array1')
+            ->setName("array1")
+            ->add($container->get('AuthMiddleware'));
 
         $group->group('orders/', function (RouteCollectorProxy $group) use ($container) {
 
         $group->get('all', 'OrderController:all')->setName("orden.all");
-        $group->get('add', 'OrderController:add')->setName("orden.add");
+        
+        $group->get("show/{id}", "OrderController:show")->setName("order.show");
 
         })->add($container->get('AuthMiddleware'));
 
@@ -50,17 +52,10 @@ return function (App $app) {
 
         })->add($container->get('AuthMiddleware'));
 
-        $group->group('eps/', function (RouteCollectorProxy $group) use ($container) {
+        $group->group('study/', function (RouteCollectorProxy $group) use ($container) {
 
-        $group->get('all', 'EpsController:all')->setName("eps.all");
-        $group->get('add', 'EpsController:add')->setName("eps.add");
-
-        })->add($container->get('AuthMiddleware'));
-
-        $group->group('modality/', function (RouteCollectorProxy $group) use ($container) {
-
-        $group->get('all', 'ModalityController:all')->setName("modality.all");
-        $group->get('add', 'ModalityController:add')->setName("modality.add");
+        $group->get('all', 'StudyController:all')->setName("study.all");
+        $group->post("add", "StudyController:add")->setName("study.add");
 
         })->add($container->get('AuthMiddleware'));
 
